@@ -18,6 +18,8 @@
  */
 namespace NET;
 
+use Auth\SASL2;
+
 /**
  * Provides an implementation of the IMAP protocol using PEAR's
  * Net_Socket:: class.
@@ -614,7 +616,7 @@ class IMAPProtocol
 		$this->_getNextToken($args, $challenge);
 
 		$challenge = base64_decode($challenge);
-		$digest    = &Auth_SASL::factory('digestmd5');
+		$digest    = &Auth\SASL2::factory('digestmd5');
 		$auth_str  = base64_encode($digest->getResponse($uid,
 														$pwd,
 														$challenge,
@@ -673,7 +675,7 @@ class IMAPProtocol
 		$this->_getNextToken($args, $challenge);
 
 		$challenge = base64_decode($challenge);
-		$cram      = &Auth_SASL::factory('crammd5');
+		$cram      = &Auth\SASL2::factory('crammd5');
 		$auth_str  = base64_encode($cram->getResponse($uid,
 													  $pwd,
 													  $challenge));
