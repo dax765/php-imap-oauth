@@ -7,7 +7,7 @@
 
 class GoogleOAuth2 {
 
-	private string | bool $_accessToken = '';
+	private string $_accessToken = '';
 
 	public function __construct(private string $clientID,
 										 private string $clientSecret,
