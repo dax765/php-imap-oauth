@@ -12,7 +12,9 @@ $test->disconnect();
 To generate refresh token
 
 ```php
-$clientID     = "somethingsomething.apps.googleusercontent.com"; // New client ID and secret on https://console.cloud.google.com/
+// New client ID and secret on https://console.cloud.google.com/
+
+$clientID     = "somethingsomething.apps.googleusercontent.com"; 
 $clientSecret = "AAAA-AAAA-AAAA-AAAA-AAA";
 $redirectURL  = "http://localhost";
 $accountsURL  = "https://accounts.google.com/o/oauth2/auth";
