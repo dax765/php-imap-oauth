@@ -309,7 +309,7 @@ class IMAP extends IMAPProtocol
 	public function getRawHeaders($msg_id, $part_id = '', $uidFetch = false)
 	{
 		if ($part_id != '') {
-			$command = 'BODY[' . $part_id . '.HEADER]';
+			$command = 'BODY[HEADER.' . $part_id . ']';
 		} else {
 			$command = 'BODY[HEADER]';
 		}
